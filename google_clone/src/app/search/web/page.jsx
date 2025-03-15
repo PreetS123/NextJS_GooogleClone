@@ -1,3 +1,4 @@
+import WebSearchResults from "@/components/WebSearchResults";
 import Link from "next/link";
 import React from "react";
 import { MdOutlineRestartAlt } from "react-icons/md";
@@ -29,10 +30,7 @@ const WebSearchPage = async ({ searchParams }) => {
 
   return (
     <div>
-      {result &&
-        result?.map((res) => {
-          return <div key={res}>{res.title}</div>;
-        })}
+      {result && <WebSearchResults allResult={data} />}
     </div>
   );
 };
