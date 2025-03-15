@@ -17,10 +17,10 @@ const SearchBox = () => {
     router.push(`/search/web?searchTerm=${query}`);
   };
   return (
-    <div>
+    <>
       <form
         onSubmit={handleSubmit}
-        className="flex border border-gray-200 px-6 py-3 mt-10 mr-5 flex-grow max-w-3xl items-center rounded-full shadow-lg hover:shadoow-md focus-within:shadow-md transition-shadow sm:max-w-xl lg:max-w-2xl"
+        className="flex border border-gray-200 px-6 py-3 mr-5 flex-grow max-w-3xl items-center rounded-full shadow-lg hover:shadoow-md focus-within:shadow-md transition-shadow sm:max-w-xl lg:max-w-2xl"
       >
         <input
           value={query}
@@ -40,7 +40,7 @@ const SearchBox = () => {
           className="hidden text-2xl sm:inline-flex text-blue-500 cursor-pointer"
         />
       </form>
-    </div>
+    </>
   );
 };
 
