@@ -1,7 +1,6 @@
-"use client";
 import Link from "next/link";
 import React from "react";
-import parse from 'html-react-parser';
+import parse from "html-react-parser";
 
 const WebSearchResults = ({ allResult }) => {
   return (

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { Suspense, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
 import { BsFillMicFill } from "react-icons/bs";
 import { RxCross2 } from "react-icons/rx";
@@ -17,7 +17,7 @@ const SearchBox = () => {
     router.push(`/search/web?searchTerm=${query}`);
   };
   return (
-    <>
+    <Suspense>
       <form
         onSubmit={handleSubmit}
         className="flex border border-gray-200 px-6 py-3 mr-5 flex-grow max-w-3xl items-center rounded-full shadow-lg hover:shadoow-md focus-within:shadow-md transition-shadow sm:max-w-xl lg:max-w-2xl"
@@ -40,7 +40,7 @@ const SearchBox = () => {
           className="hidden text-2xl sm:inline-flex text-blue-500 cursor-pointer"
         />
       </form>
-    </>
+    </Suspense>
   );
 };
 
