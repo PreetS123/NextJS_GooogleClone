@@ -5,14 +5,14 @@ import { MdOutlineRestartAlt } from "react-icons/md";
 
 const ImageSearchPage = async ({ searchParams }) => {
 
-    const searchKey = await searchParams?.searchTerm;
+    const searchKey =  await searchParams?.searchTerm;
   const response = await fetch(
     `https://www.googleapis.com/customsearch/v1?key=${process.env.INSERT_YOUR_API_KEY}&cx=${process.env.CONTEX_KEY}&q=${searchKey}&searchType=image`
   );
   if (!response.ok) throw new Error("Something went wrong");
   const data = await response.json();
   const result = data?.items;
-  //   console.log("resss web", result);
+    // console.log("resss web", data);
 
   if (!result) {
     return (
@@ -31,7 +31,7 @@ const ImageSearchPage = async ({ searchParams }) => {
     );
   }
 
-  return <div>{result && <ImageSearchResults allResult={data} />}</div>;
+  return <div>{result && <ImageSearchResults results={data} />}</div>;
 };
 
 export default ImageSearchPage;
