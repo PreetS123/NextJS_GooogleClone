@@ -1,4 +1,3 @@
-"use client";
 import WebSearchResults from "@/components/WebSearchResults";
 import Link from "next/link";
 import React from "react";
@@ -7,6 +6,7 @@ import { MdOutlineRestartAlt } from "react-icons/md";
 const WebSearchPage = async ({ searchParams }) => {
   // https://www.googleapis.com/customsearch/v1?key=INSERT_YOUR_API_KEY&cx=017576662512468239146:omuauf_lfve&q=lectures
   const searchKey = await searchParams?.searchTerm;
+  if (!searchKey) return <p>No search term provided.</p>;
   const response = await fetch(
     `https://www.googleapis.com/customsearch/v1?key=${process.env.INSERT_YOUR_API_KEY}&cx=${process.env.CONTEX_KEY}&q=${searchKey}`
   );

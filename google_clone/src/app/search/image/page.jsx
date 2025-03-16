@@ -1,4 +1,3 @@
-"use client";
 import ImageSearchResults from "@/components/ImageSearchResults";
 import Link from "next/link";
 import React from "react";
@@ -7,6 +6,7 @@ import { MdOutlineRestartAlt } from "react-icons/md";
 const ImageSearchPage = async ({ searchParams }) => {
 
     const searchKey =  await searchParams?.searchTerm;
+    if (!searchKey) return <p>No search term provided.</p>;
   const response = await fetch(
     `https://www.googleapis.com/customsearch/v1?key=${process.env.INSERT_YOUR_API_KEY}&cx=${process.env.CONTEX_KEY}&q=${searchKey}&searchType=image`
   );
