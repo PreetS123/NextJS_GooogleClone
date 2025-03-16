@@ -1,3 +1,4 @@
+"use client";
 import WebSearchResults from "@/components/WebSearchResults";
 import Link from "next/link";
 import React from "react";
