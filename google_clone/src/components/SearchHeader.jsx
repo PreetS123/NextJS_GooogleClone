@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { Suspense } from "react";
 import SearchBox from "./SearchBox";
 import { RiSettings3Line } from "react-icons/ri";
 import { TbGridDots } from "react-icons/tb";
@@ -8,6 +8,7 @@ import SearchHeadersOptions from "./SearchHeadersOptions";
 
 const SearchHeader = () => {
   return (
+    <Suspense>
     <header className="sticky top-0 bg-white">
       <div className="flex w-full p-6 items-center justify-between">
         <Link href="/">
@@ -33,6 +34,7 @@ const SearchHeader = () => {
       </div>
       <SearchHeadersOptions/>
     </header>
+    </Suspense>
   );
 };
 
